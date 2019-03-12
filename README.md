@@ -25,7 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Extensions Visual Studio Code
 
 C# for Visaul Studio Code by Microsoft;
-Nuget Package Manager by jmrog
+Nuget Package Manager by jmrog;
+Angular V6 Snippets by John Papa;
+Angular Files by Alexander Ivanichev;
+Angular Language Service by Angular;
+angular2-switcher by infinity 1207;
+Auto Rename Tag by Jun Han;
+Bracket Pair Colorizer by CoenraadS;
+Debugger for Chrome by Microsoft;
+Material Icon Theme by Philipp Kief;
+Path Intellisense by Christian Kohler;
+Prettier - Code formatter by Esben Petersen;
+TSLint by egamma;
 
 ## Further help
 
