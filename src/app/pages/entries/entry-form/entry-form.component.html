@@ -1,6 +1,4 @@
-<app-bread-crumb
-[items]="[{text: 'Lançamentos', link:'/entries'}, {text: pageTitle}]">
-</app-bread-crumb>
+<app-bread-crumb [items]="[{text: 'Lançamentos', link:'/entries'}, {text: pageTitle}]"></app-bread-crumb>
 
 <app-page-header
 [page-title]="pageTitle"
@@ -17,26 +15,22 @@ button-class="btn-light">
      <div class="card-body">
       <div class="form-row">
          
-
         <!-- type -->
-        <div class="form-group col-md-2">
+          <div class="form-group col-md-2">
             <label for="type">Tipo</label>
             <select name="type" id="type" formControlName="type" class="form-control">
               <option *ngFor="let option of typeOptions" [value]="option.value">{{option.text}}</option>
             </select>
-            <div class="text-danger" *ngIf="resourceForm.get('type').invalid && resourceForm.get('type').touched">
-              <span *ngIf="resourceForm.get('type').errors.required">dado obrigatorio</span>
-            </div>
+
+            <app-form-field-error [form-control]="resourceForm.get('type')"></app-form-field-error>
           </div>
 
            <!--name-->
          <div class="form-group col-md-5">
             <label for="name">Lançamento</label>
             <input type="text" class="form-control" id="name" formControlName="name">
-            <div class="text-danger" *ngIf="resourceForm.get('name').invalid && resourceForm.get('name').touched">
-              <span *ngIf="resourceForm.get('name').errors.required">dado obrigatorio</span>
-              <span *ngIf="resourceForm.get('name').errors.minlength">deve ter no minimo 2 caracteres</span>
-            </div>
+
+            <app-form-field-error [form-control]="resourceForm.get('name')"></app-form-field-error>
           </div>
 
            <!--amount-->
@@ -49,10 +43,7 @@ button-class="btn-light">
               <input [imask]='imaskConfig' type="text" class="form-control text-right" id="amount" formControlName="amount">
              
             </div>
-            <div class="text-danger" *ngIf="resourceForm.get('amount').invalid && resourceForm.get('amount').touched">
-                <span *ngIf="resourceForm.get('amount').errors.required">dado obrigatorio</span>
-                <span *ngIf="resourceForm.get('amount').errors.minlength">deve ter no minimo 2 caracteres</span>
-              </div>
+            <app-form-field-error [form-control]="resourceForm.get('amount')"></app-form-field-error>
           </div>
 
           <!--date-->
@@ -67,11 +58,8 @@ button-class="btn-light">
               [showButtonBar]="true"
               ></p-calendar>
 
-              <div class="text-danger" *ngIf="resourceForm.get('date').invalid && resourceForm.get('date').touched">
-                  <span *ngIf="resourceForm.get('date').errors.required">dado obrigatorio</span>
-                </div>
-            </div>
-      </div>
+              <app-form-field-error [form-control]="resourceForm.get('date')"></app-form-field-error>
+          </div>
 
        <div class="form-row">
 
@@ -87,9 +75,7 @@ button-class="btn-light">
             </label>
           </div>
         
-          <div class="text-danger" *ngIf="resourceForm.get('amount').invalid && resourceForm.get('paid').touched">
-              <span *ngIf="resourceForm.get('paid').errors.required">dado obrigatorio</span>
-            </div>
+          <app-form-field-error [form-control]="resourceForm.get('paid')"></app-form-field-error>
         </div>
 
         
